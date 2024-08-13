@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotka</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <img id="photo" src="grafana_screenshot.png" alt="Fotka">
+    <script>
+        function refreshImage() {
+            const img = document.getElementById('photo');
+            img.src = 'grafana_screenshot.png?' + new Date().getTime();
+        }
+
+        setInterval(refreshImage, 300000); // každých 5 minut
+    </script>
+</body>
+</html>
